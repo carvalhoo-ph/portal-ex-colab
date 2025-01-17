@@ -23,7 +23,7 @@ jobs:
       with:
         node-version: 18
 
-    - name: Instalando as dependências do nosso projeto
+    - name: Instalando as dependências do nosso projeto 2
       run: npm install
 
     - name: Buildando nosso projeto
