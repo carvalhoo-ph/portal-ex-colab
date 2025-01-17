@@ -1,38 +1,36 @@
-name: GitHub Pages
+name: CI/CD para Angular no S3
 
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    steps:
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
 
-    - name: Checkout
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: "us-east-1"  # Substitua com a região AWS onde está o seu bucket s3
+
+    steps:
+    - name: Checkout do repositório
       uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
+    - name: Configurando o NodeJS
+      uses: actions/setup-node@v3
       with:
-        node-version: 14
+        node-version: 18
 
-    - name: Install dependencies
+    - name: Instalando as dependências do nosso projeto
       run: npm install
 
-    - name: Run tests
-      run: npm run test:headless
+    - name: Buildando nosso projeto
+      run: npm run build
 
-    - name: Build
-      run: npm run build:prod
+    - name: Configurando AWS CLI
+      run: aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID && aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY && aws configure set default.region $AWS_DEFAULT_REGION
 
-    - name: Deploy
-      if: success()
-      run: aws s3 sync ./dist/portal-ex-colab http://portal-ex-colab-github-s3.s3-website-us-east-1.amazonaws.com
+    - name: Realizando upload do bundle da aplicação no S3
+      run: AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION aws s3 sync dist/ http://portal-ex-colab-github-s3.s3-website-us-east-1.amazonaws.com      
