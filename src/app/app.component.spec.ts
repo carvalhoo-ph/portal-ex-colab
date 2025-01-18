@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'portal-ex-colab' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('portal-ex-colab');
+    expect(app.title).toEqual(' TCC USP ESALQ');
   });
 
   it('should render title', () => {
