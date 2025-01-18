@@ -32,6 +32,9 @@ jobs:
     - name: Verificando arquivos gerados
       run: ls -la dist/portal-ex-colab
 
+    - name: Verificando todos os arquivos gerados
+      run: find dist/portal-ex-colab -type f
+
     - name: Configurando AWS CLI
       run: |
         aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
