@@ -45,4 +45,4 @@ jobs:
       run: aws sts get-caller-identity
 
     - name: Realizando upload do bundle da aplicação no S3
-      run: aws s3 sync dist/portal-ex-colab s3://portal-ex-colab-github-s3 --delete
+      run: aws s3 sync dist/portal-ex-colab/browser s3://portal-ex-colab-github-s3 --delete

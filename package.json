@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:portal-ex-colab": "node dist/portal-ex-colab/server/server.mjs",
-    "build:prod": "ng build --configuration production",
+    "build:prod": "ng build --prod",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
