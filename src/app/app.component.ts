@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.css'],
+  standalone: true, // Certifique-se de que está configurado como standalone
+  imports: [
+    // Adicione aqui os módulos que o AppComponent precisa
+  ]
 })
 export class AppComponent {
-  title = ' TCC USP ESALQ';
+  title = 'portal-ex-colab';
 }

@@ -1,0 +1,10 @@
+.card {
+  margin-left: 20px; // Ajuste o valor conforme necessário
+  margin-right: 20px;
+}
+
+.div-home {
+    display: grid;
+    grid-template-columns: 28% 68%;
+    justify-content: space-evenly;
+}
