@@ -1,64 +1,39 @@
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">USP Esalq</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/">Home
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/demonstrativo">Demonstrativo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/informe">Informe de Rendimento</a>
-          </li>
+<div class="alert alert-dismissible alert-secondary">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Bem Vindo!</strong> Você realizou o seu login com sucesso.
+</div> 
 
-        </ul>
+<div class="div-home">
+  <div>
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem; cursor: pointer;" (click)="navigateTo('demonstrativo')">
+      <div class="card-header">Pagina</div>
+      <div class="card-body">
+        <h4 class="card-title">Demonstrativo</h4>
+        <p class="card-text">Buscar meus demonstrativos de pagamento.</p>
       </div>
     </div>
-  </nav>
-  <div class="alert alert-dismissible alert-secondary">
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    <strong>Bem Vindo!</strong> Você realizou o seu login com sucesso.
-  </div> 
-
-
-  <div class="div-home">
-    <div>
-      <div class="card text-white bg-primary mb-3" style="max-width: 20rem; cursor: pointer;" (click)="navigateTo('demonstrativo')">
-        <div class="card-header">Pagina</div>
-        <div class="card-body">
-          <h4 class="card-title">Demonstrativo</h4>
-          <p class="card-text">Buscar meus demonstrativos de pagamento.</p>
-        </div>
-      </div>
-      <div class="card text-white bg-primary mb-3" style="max-width: 20rem; cursor: pointer;" (click)="navigateTo('informe')">
-        <div class="card-header">Pagina</div>
-        <div class="card-body">
-          <h4 class="card-title">Informe</h4>
-          <p class="card-text">Buscar meus informe de rendimentos</p>
-        </div>
+    <div class="card text-white bg-primary mb-3" style="max-width: 20rem; cursor: pointer;" (click)="navigateTo('informe')">
+      <div class="card-header">Pagina</div>
+      <div class="card-body">
+        <h4 class="card-title">Informe</h4>
+        <p class="card-text">Buscar meus informe de rendimentos</p>
       </div>
     </div>
-    <div>
-      <h2>Modernização de Módulo ERP com Microsserviços</h2>
+  </div>
+  <div>
+    <h2>Modernização de Módulo ERP com Microsserviços</h2>
+    <p></p>
+    <h3>Sobre o Projeto</h3>
+      <p>A evolução das arquiteturas de software é um dos principais desafios das empresas que utilizam sistemas ERP (Enterprise Resource Planning). Esses sistemas, tradicionalmente monolíticos, possuem dificuldades em escalabilidade, manutenção e customização. Diante desse contexto, este projeto de pesquisa tem como objetivo avaliar os impactos da migração de um módulo de acesso a documentos de recursos humanos (RH) para uma arquitetura baseada em microsserviços e serverless.</p>
       <p></p>
-      <h3>Sobre o Projeto</h3>
-        <p>A evolução das arquiteturas de software é um dos principais desafios das empresas que utilizam sistemas ERP (Enterprise Resource Planning). Esses sistemas, tradicionalmente monolíticos, possuem dificuldades em escalabilidade, manutenção e customização. Diante desse contexto, este projeto de pesquisa tem como objetivo avaliar os impactos da migração de um módulo de acesso a documentos de recursos humanos (RH) para uma arquitetura baseada em microsserviços e serverless.</p>
-        <p></p>
-        <h3>Objetivo do Estudo</h3>
-        <p>O estudo busca demonstrar que a implementação de um módulo de acessos a documentos de RH em um ERP monolítico pode ser realizada de forma desacoplada, utilizando uma arquitetura moderna baseada em microsserviços e serverless. Espera-se que essa abordagem proporcione melhorias significativas em termos de:</p>
-        <p><strong> Agilidade no desenvolvimento </strong></p>
-        <p><strong> Escalabilidade e resiliência</strong></p>
-        <p><strong> Eficiência operacional</strong></p>
-        <p><strong> Redução de custos com infraestrutura e manutenção</strong></p>
-    </div>
-    </div>
+      <h3>Objetivo do Estudo</h3>
+      <p>O estudo busca demonstrar que a implementação de um módulo de acessos a documentos de RH em um ERP monolítico pode ser realizada de forma desacoplada, utilizando uma arquitetura moderna baseada em microsserviços e serverless. Espera-se que essa abordagem proporcione melhorias significativas em termos de:</p>
+      <p><strong> Agilidade no desenvolvimento </strong></p>
+      <p><strong> Escalabilidade e resiliência</strong></p>
+      <p><strong> Eficiência operacional</strong></p>
+      <p><strong> Redução de custos com infraestrutura e manutenção</strong></p>
+  </div>
+</div>
 
 
 

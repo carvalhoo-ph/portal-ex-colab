@@ -3,6 +3,8 @@ import { AppComponent } from './app/app.component';
 import { AppRoutingModule } from './app/app-routing.module';
 import { importProvidersFrom } from '@angular/core';
 
+console.log('Bootstrap JavaScript is loaded');
+
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(AppRoutingModule),

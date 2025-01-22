@@ -1,0 +1,27 @@
+.div-demonstrativo {
+
+    margin-right: 20px; /* Adiciona margem à direita */
+  }
+  
+  .btn-group-container {
+    margin-bottom: 20px; /* Adiciona espaço entre os grupos de botões */
+    margin-top: 20px; /* Adiciona espaço acima dos grupos de botões */
+  }
+  
+  .btn-group {
+    margin: 0 10px; /* Adiciona espaço entre os botões */
+    width: auto; /* Ajusta a largura dos grupos de botões */
+  }
+  
+  .dropdown-menu {
+    width: 100%; /* Faz o menu dropdown ocupar toda a largura do grupo de botões */
+  }
+  
+  .div-home {
+    display: grid;
+    grid-template-columns: 15% 75%;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
