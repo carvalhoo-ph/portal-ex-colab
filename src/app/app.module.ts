@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 // ...importações adicionais...
 
 @NgModule({
@@ -9,11 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    // Remova o AppComponent daqui
+    FormsModule, // Adicione FormsModule aqui
+    // Remova LoginComponent e NavComponent das importações
     // ...outros módulos...
   ],
-  providers: [],
-  // Remova o bootstrap do AppComponent
+  providers: []
 })
 export class AppModule { }
