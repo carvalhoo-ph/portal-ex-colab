@@ -4,8 +4,11 @@
       <form class="d-flex flex-column align-items-center">
         <div class="d-grid gap-2">
           <p>Por favor, utilize seu CPF para logar.</p>
-          <input class="form-control me-sm-2" type="text" placeholder="CPF" [(ngModel)]="cpf" name="cpf">
-          <button type="button" class="btn btn-primary btn-lg" (click)="login()">Login</button>
+          <div class="mb-3">
+            <label for="cpf" class="form-label">CPF:</label>
+            <input type="text" id="cpf" name="cpf" class="form-control" [(ngModel)]="cpf" [ngModelOptions]="{standalone: true}">
+          </div>
+          <button type="button" class="btn btn-primary" (click)="login()">Login</button>
         </div>
       </form>
     </div>
