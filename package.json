@@ -9,7 +9,8 @@
     "test": "ng test",
     "serve:ssr:portal-ex-colab": "node dist/portal-ex-colab/server/server.mjs",
     "build:prod": "ng build --prod",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless"
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "load-test": "npx artillery run load-test.yml"
   },
   "private": true,
   "dependencies": {

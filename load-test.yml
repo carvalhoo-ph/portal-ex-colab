@@ -1,0 +1,10 @@
+config:
+  target: "http://localhost:3000"  # Define o alvo do teste de carga, que é o servidor local na porta 3000.
+  phases:
+    - duration: 120  # Define a duração do teste de carga em segundos.
+      arrivalRate: 20  # Define a taxa de chegada de novas conexões por segundo.
+
+scenarios:
+  - flow:
+    - get:
+        url: "/"  # Define o cenário do teste, que é uma requisição GET para a URL raiz "/".
