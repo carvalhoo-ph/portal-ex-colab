@@ -56,17 +56,11 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y k6
 
-    - name: Install k6-html-reporter
-      run: npm install -g k6-html-reporter
-
     - name: Run load tests
       run: k6 run --out json=load-test-result.json load-test.js
 
-    - name: Generate HTML report
-      run: npx k6-html-reporter --json load-test-result.json --output load-test-report.html
-
-    - name: Upload HTML report
+    - name: Upload JSON report
       uses: actions/upload-artifact@v4
       with:
-        name: load-test-report
-        path: load-test-report.html
+        name: load-test-result
+        path: load-test-result.json
