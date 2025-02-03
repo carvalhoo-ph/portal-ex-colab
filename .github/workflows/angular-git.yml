@@ -48,7 +48,13 @@ jobs:
       run: aws s3 sync dist/portal-ex-colab/browser s3://portal-ex-colab-github-s3 --delete
 
     - name: Install K6
-      run: sudo apt-get install -y k6
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gnupg software-properties-common
+        curl -s https://dl.k6.io/key.gpg | sudo apt-key add -
+        echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+        sudo apt-get update
+        sudo apt-get install -y k6
 
     - name: Run load tests
       run: k6 run --out json=load-test-result.json load-test.js
