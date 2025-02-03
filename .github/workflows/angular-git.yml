@@ -57,7 +57,7 @@ jobs:
       run: npx k6-html-reporter --json load-test-result.json --output load-test-report.html
 
     - name: Upload HTML report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: load-test-report
         path: load-test-report.html
