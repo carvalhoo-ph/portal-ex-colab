@@ -46,3 +46,18 @@ jobs:
 
     - name: Realizando upload do bundle da aplicação no S3
       run: aws s3 sync dist/portal-ex-colab/browser s3://portal-ex-colab-github-s3 --delete
+
+    - name: Install K6
+      run: sudo apt-get install -y k6
+
+    - name: Run load tests
+      run: k6 run --out json=load-test-result.json load-test.js
+
+    - name: Generate HTML report
+      run: npx k6-html-reporter --json load-test-result.json --output load-test-report.html
+
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v2
+      with:
+        name: load-test-report
+        path: load-test-report.html
