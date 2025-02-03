@@ -63,7 +63,7 @@ jobs:
       run: k6 run --out json=load-test-result.json load-test.js
 
     - name: Generate HTML report
-      run: k6-html-reporter --json load-test-result.json --output load-test-report.html
+      run: npx k6-html-reporter --json load-test-result.json --output load-test-report.html
 
     - name: Upload HTML report
       uses: actions/upload-artifact@v4
