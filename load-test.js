@@ -4,8 +4,8 @@ import { textSummary } from 'https://jslib.k6.io/k6-summary/0.0.1/index.js';
 
 export let options = {
   stages: [
-    { duration: '2m', target: 30 }, // ramp up to 30 users over 2 minutes
-    { duration: '3m', target: 30 }, // stay at 30 users for 3 minutes
+    { duration: '2m', target: 100 }, // ramp up to 30 users over 2 minutes
+    { duration: '3m', target: 100 }, // stay at 30 users for 3 minutes
     { duration: '2m', target: 0 },  // ramp down to 0 users over 2 minutes
   ],
   thresholds: {
